@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:prueba_tecnica/screens/search/search.dart';
 
 class App extends StatelessWidget {
   const App({super.key});
@@ -9,7 +10,7 @@ class App extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: Container(),
+      home: const SearchPage(),
     );
   }
 }
