@@ -3,11 +3,12 @@ class Dimens {
 
   static const capitalText = 40.0;
   static const h1TitleText = 20.0;
+  static const legalText = 13.0;
+  static const bodyText = 14.0;
 
   static const h3SubtitleText = 16.0;
-  static const bodyText = 14.0;
   static const mobileParagraphText = 12.0;
-  static const legalText = 10.0;
+
   static const activationCodeText = 20.0;
 
   static const messageSnapshotHeight = 60.0;
