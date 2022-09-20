@@ -17,44 +17,47 @@ void main() {
 
   group('when its succesfull', () {
     test(
-      'Its should return ResponseMapCustomerEntity if its succesfull',
+      'Its should return ResponseEntity if its succesfull',
       () async {
+        // Arrange
         when(() => _repositories.getData(requestEntity)).thenAnswer(
           (_) async => Right(responseEntity),
         );
-
+        // Act
         final _result = await _usecase(requestEntity);
-
+        // Assert
         expect(_result.fold(id, id), isA<ResponseEntity>());
         verify(() => _repositories.getData(requestEntity)).called(1);
       },
     );
   });
 
-  group('when there are any error', () {
+  group('when there are  error', () {
     test(
-      'Its should return DigitalCurrencyError if It not work',
+      'Its should return DatasourceError ',
       () async {
+        // Arrange
         when(() => _repositories.getData(requestEntity)).thenAnswer(
           (_) async => const Left(DatasourceError()),
         );
-
+        // Act
         final _result = await _usecase(requestEntity);
-
+        // Assert
         expect(_result.fold(id, id), isA<DatasourceError>());
         verify(() => _repositories.getData(requestEntity)).called(1);
       },
     );
 
     test(
-      'Its should return DigitalCurrencyError if It not work',
+      'Its should return InternetError ',
       () async {
+        // Arrange
         when(() => _repositories.getData(requestEntity)).thenAnswer(
           (_) async => const Left(InternetError()),
         );
-
+        // Act
         final _result = await _usecase(requestEntity);
-
+        // Assert
         expect(_result.fold(id, id), isA<InternetError>());
         verify(() => _repositories.getData(requestEntity)).called(1);
       },
