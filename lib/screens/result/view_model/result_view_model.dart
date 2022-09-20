@@ -37,6 +37,4 @@ class ResultViewModel {
   void _showError(ResultError error) => model.isError.value = true;
 
   void _finally() => model.isLoading.value = false;
-
-  void dispose() {}
 }

@@ -22,11 +22,12 @@ void main() {
 
   group('when its succesfull', () {
     test('its should return ResponseModel object', () async {
+      //Arrange
       when(() => _datasource.getDatasource(requestEntity))
           .thenAnswer((_) async => responseModel);
-
+      // Act
       final _result = await _repository.getData(requestEntity);
-
+      // Assert
       expect(_result.fold(id, id), isA<ResponseModel>());
       verify(() => _datasource.getDatasource(requestEntity)).called(1);
     });
@@ -34,32 +35,35 @@ void main() {
 
   group('when there are any error', () {
     test('when is DatasourceError', () async {
+      //Arrange
       when(() => _datasource.getDatasource(requestEntity)).thenThrow(_error);
-
+      // Act
       final _result = await _repository.getData(requestEntity);
-
+      // Assert
       expect(_result.fold(id, id), isA<DatasourceError>());
       verify(() => _datasource.getDatasource(requestEntity)).called(1);
     });
 
     test('when is InternetError', () async {
+      //Arrange
       when(() => _datasource.getDatasource(requestEntity)).thenThrow(
         const SocketException(''),
       );
-
+      // Act
       final _result = await _repository.getData(requestEntity);
-
+      // Assert
       expect(_result.fold(id, id), isA<InternetError>());
       verify(() => _datasource.getDatasource(requestEntity)).called(1);
     });
 
-    test('when is InternetError', () async {
+    test('when is any Error', () async {
+      // Arrange
       when(() => _datasource.getDatasource(requestEntity)).thenThrow(
         TypeError(),
       );
-
+      // Act
       final _result = await _repository.getData(requestEntity);
-
+      // Assert
       expect(_result.fold(id, id), isA<DatasourceError>());
       verify(() => _datasource.getDatasource(requestEntity)).called(1);
     });
