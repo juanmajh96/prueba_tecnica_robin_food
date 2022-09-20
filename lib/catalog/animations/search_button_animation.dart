@@ -40,7 +40,6 @@ class _SearchButtonAnimationState extends State<SearchButtonAnimation>
       FocusScope.of(context).requestFocus(_focusNode);
     }
     if (_animation.isDismissed) {
-      FocusScope.of(context).unfocus();
       widget.onSearch(_textEditingController.text);
       _textEditingController.clear();
     }
@@ -48,11 +47,9 @@ class _SearchButtonAnimationState extends State<SearchButtonAnimation>
   }
 
   void _onEditingComplete() {
-    FocusScope.of(context).unfocus();
-    widget.onSearch(_textEditingController.text);
     _animationController.reverse();
     _isForward = false;
-    _textEditingController.clear();
+    FocusScope.of(context).unfocus();
   }
 
   @override
@@ -110,6 +107,7 @@ class _SearchButtonAnimationState extends State<SearchButtonAnimation>
                     } else {
                       _animationController.reverse();
                       _isForward = false;
+                      FocusScope.of(context).unfocus();
                     }
                   },
                 ),
