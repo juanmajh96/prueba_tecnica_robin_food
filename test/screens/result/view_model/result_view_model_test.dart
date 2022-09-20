@@ -32,21 +32,6 @@ void main() {
   });
 
   group('ResultViewModel, when response is ok', () {
-    test(
-        'When getData is called, method call() from GetData is called one time',
-        () async {
-      // Arrange
-      when(() => _usecase.call(any())).thenAnswer((_) async {
-        return Right(_responseEntity);
-      });
-
-      // Act
-      _sut.getData();
-
-      // Assert
-      verify(() => _usecase.call(any())).called(1);
-    });
-
     test('When getData is called, isLoading value should be true', () async {
       // Arrange
       when(() => _usecase.call(any())).thenAnswer((_) async {
