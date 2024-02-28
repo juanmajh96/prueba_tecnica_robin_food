@@ -2,7 +2,7 @@
 
 Prueba tecnica para Robin food por Juan Jaramillo.
 
-[![prueba_tecnica_robinfood](https://github.com/juanmajh96/prueba_tecnica_robin_food/actions/workflows/main.yaml/badge.svg)](https://github.com/juanmajh96/prueba_tecnica_robin_food/actions/workflows/main.yaml) [![style: very good analysis](https://img.shields.io/badge/style-very_good_analysis-B22C89.svg)](https://pub.dev/packages/very_good_analysis) [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![prueba_tecnica_robinfood](https://github.com/juanmajh96/clean_architecture_example_flutter/actions/workflows/main.yaml/badge.svg)](https://github.com/juanmajh96/prueba_tecnica_robin_food/actions/workflows/main.yaml) [![style: very good analysis](https://img.shields.io/badge/style-very_good_analysis-B22C89.svg)](https://pub.dev/packages/very_good_analysis) [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 
 ## Corriendo Tests 🧪
